@@ -1,9 +1,9 @@
-import { getUserName } from "./utils/getUserName.js";
+import { getUserName } from "./components/getUserName.js";
 import { homedir } from 'os';
-import { stdin, stdout, chdir  } from "process";
-import { startProcess } from "./utils/startProcess.js";
-import { endSession } from "./utils/endSession.js";
-import { showCurrentPath } from "./utils//currentPath.js";
+import { stdin,  chdir  } from "process";
+import { startProcess } from "./components/startProcess.js";
+import { endSession } from "./components/endSession.js";
+import { showCurrentPath } from "./components/currentPath.js";
 
 
 const userName = getUserName();

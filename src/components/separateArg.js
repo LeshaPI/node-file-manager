@@ -1,4 +1,4 @@
-import { ENTER_A_PATH, INVALID_INPUT, OPERTIONS } from "./consts.js";
+import { ENTER_A_PATH, INVALID_INPUT, OPERTIONS } from "../utils/consts.js";
 
 export const separateArg = (arg) => {
     const [opp, ...pathes] = arg.split(' ');

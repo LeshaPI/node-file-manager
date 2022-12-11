@@ -1,4 +1,4 @@
-import { RUN_WITH_USERNAME, USER_NAME } from "./consts.js";
+import { RUN_WITH_USERNAME, USER_NAME } from "../utils/consts.js";
 import { endSession } from "./endSession.js";
 
 export const getUserName = () => {

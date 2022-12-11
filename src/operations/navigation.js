@@ -1,5 +1,5 @@
-import {join, resolve , parse } from 'path';
-import { INCORECT_PATH } from '../utils/consts.js';
+import {join, resolve, win32 } from 'path';
+import { OPERATION_FAILED } from '../utils/consts.js';
 
 export const up = () => {
     const newPath = join(process.cwd(), '..');
@@ -12,6 +12,6 @@ export const cd = (path) => {
     try {
         process.chdir(correctPath);
     } catch {
-        console.log(INCORECT_PATH);
+        console.log(OPERATION_FAILED);
     }
 };
