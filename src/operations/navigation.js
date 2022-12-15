@@ -1,4 +1,4 @@
-import {join, resolve, win32 } from 'path';
+import {join , resolve} from 'path';
 import { OPERATION_FAILED } from '../utils/consts.js';
 
 export const up = () => {
@@ -7,8 +7,9 @@ export const up = () => {
 }
 
 export const cd = (path) => {
+
     const correctPath = resolve(...path);
-    
+
     try {
         process.chdir(correctPath);
     } catch {

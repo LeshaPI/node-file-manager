@@ -19,6 +19,11 @@ export const separateArg = (arg) => {
 			break;
 		case 'cd':
 		case 'os':
+		case 'cat':
+		case 'rn':
+		case 'cp':
+		case 'mv':
+		case 'rm':
 			if (!pathes.length) {
                 console.log(ENTER_A_PATH);
 				err = ENTER_A_PATH;
