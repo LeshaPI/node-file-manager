@@ -1,9 +1,10 @@
 import { getUserName } from "./components/getUserName.js";
 import { homedir } from 'os';
 import { stdin,  chdir  } from "process";
-import { startProcess } from "./components/startProcess.js";
 import { endSession } from "./components/endSession.js";
 import { showCurrentPath } from "./components/currentPath.js";
+import { operationHandler } from "./components/operationHandler.js";
+
 
 
 const userName = getUserName();
@@ -14,10 +15,12 @@ chdir(homedir());
 console.log(SAY_HELLO);
 showCurrentPath();
 
-stdin.on('data', data => 
-  startProcess(data, SAY_GOODBYE )
-);
+stdin.on('data', data => {
+  const correctData = data.toString().trim();
+  if(correctData === '.exit') endSession(goodbyeMsg);
+  operationHandler(correctData);
+});
 
 process.on('SIGINT', () => 
   endSession(SAY_GOODBYE)
-);
+); 
