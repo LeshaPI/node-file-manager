@@ -17,7 +17,7 @@ showCurrentPath();
 
 stdin.on('data', data => {
   const correctData = data.toString().trim();
-  if(correctData === '.exit') endSession(goodbyeMsg);
+  if(correctData === '.exit') endSession(SAY_GOODBYE);
   operationHandler(correctData);
 });
 

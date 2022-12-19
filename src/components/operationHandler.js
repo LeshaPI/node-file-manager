@@ -7,6 +7,7 @@ import { normalizePath } from "./normalizePath.js";
 import { osOperation } from "../operations/osOperations.js";
 import { OPERATION_FAILED } from "../utils/consts.js";
 import { compress, decompress } from "../operations/compressOperations.js";
+import { calculateHash } from "../operations/hash.js";
 
 export const operationHandler = ( operation ) => {
 
@@ -41,6 +42,8 @@ export const operationHandler = ( operation ) => {
                 case 'compress': compress(args);
                 break;
                 case 'decompress': decompress(args);
+                break;
+                case 'hash': calculateHash(args);
                 break;
             }
   

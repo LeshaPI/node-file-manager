@@ -36,7 +36,7 @@ export const decompress = async( pathes ) => {
 
     try {
         await pipeline(readStream, brotliDecompress, writeStream);
-    } catch(e){
-        console.log(e);
+    } catch{
+        console.log(OPERATION_FAILED);
     }
 }
