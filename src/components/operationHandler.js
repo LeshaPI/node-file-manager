@@ -6,6 +6,7 @@ import { read, create, renameFile, copy, move, delite } from "../operations/fsOp
 import { normalizePath } from "./normalizePath.js";
 import { osOperation } from "../operations/osOperations.js";
 import { OPERATION_FAILED } from "../utils/consts.js";
+import { compress, decompress } from "../operations/compressOperations.js";
 
 export const operationHandler = ( operation ) => {
 
@@ -37,7 +38,9 @@ export const operationHandler = ( operation ) => {
                 break;
                 case 'os': osOperation(args);
                 break
-                case 'compress':
+                case 'compress': compress(args);
+                break;
+                case 'decompress': decompress(args);
                 break;
             }
   
