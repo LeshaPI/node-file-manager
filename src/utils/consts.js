@@ -18,3 +18,11 @@ export const OPERTIONS = [
 	'compress',
 	'decompress'
 ]
+
+export const OS_OPERATION = [
+	'--EOL',
+	'--cpus',
+	'--homedir',
+	'--username',
+	'--architecture'
+]

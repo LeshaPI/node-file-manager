@@ -24,6 +24,7 @@ export const separateArg = (arg) => {
 		case 'cp':
 		case 'mv':
 		case 'rm':
+		case 'os':
 			if (!pathes.length) {
                 console.log(ENTER_A_PATH);
 				err = ENTER_A_PATH;

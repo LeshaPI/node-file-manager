@@ -3,11 +3,13 @@ import { cd, up } from "../operations/navigation.js"
 import { showCurrentPath } from "./currentPath.js";
 import { separateArg } from "./separateArg.js";
 import { read, create, renameFile, copy, move, delite } from "../operations/fsOperation.js";
+import { normalizePath } from "./normalizePath.js";
+import { osOperation } from "../operations/osOperation.js";
 
 export const operationHandler = ( operation ) => {
 
     const err = separateArg(operation);
-    const [op , ...path] = operation.split(' ');
+    const [op , ...args] = normalizePath(operation);
 
 
     if(!err){
@@ -16,22 +18,24 @@ export const operationHandler = ( operation ) => {
         switch(op){
             case 'up': up();
             break;
-            case 'cd': cd(path);
+            case 'cd': cd(args);
             break;
             case 'ls': ls();
             break;
-            case 'cat': read(path); 
+            case 'cat': read(args); 
             break;
-            case 'add': create(path);
+            case 'add': create(args);
             break;
-            case 'rn': renameFile(path);
+            case 'rn': renameFile(args);
             break;
-            case 'cp': copy(path);
+            case 'cp': copy(args);
             break;
-            case 'mv': move(path);
+            case 'mv': move(args);
             break;
-            case 'rm': delite(path);
+            case 'rm': delite(args);
             break;
+            case 'os': osOperation(args);
+            break
         }
 
     } catch (error) {
