@@ -1,0 +1,24 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "rsschool task",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeshaPI/node-file-manager.git"
+  },
+  "keywords": [
+    "nodejs",
+    "file-manager"
+  ],
+  "type": "module",
+  "author": "LeshaPI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeshaPI/node-file-manager/issues"
+  },
+  "homepage": "https://github.com/LeshaPI/node-file-manager#readme"
+}
