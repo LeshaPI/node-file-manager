@@ -6,9 +6,10 @@ export const up = () => {
     process.chdir(newPath);
 }
 
-export const cd = (path) => {
+export const cd = ( path ) => {
 
     const correctPath = resolve(...path);
+    console.log(correctPath);
 
     try {
         process.chdir(correctPath);

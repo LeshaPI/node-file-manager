@@ -5,7 +5,7 @@ import { separateArg } from "./separateArg.js";
 import { read, create, renameFile, copy, move, delite } from "../operations/fsOperations.js";
 import { normalizePath } from "./normalizePath.js";
 import { osOperation } from "../operations/osOperations.js";
-import { OPERATION_FAILED } from "../utils/consts.js";
+import { OPERATION_FAILED, OPERTIONS_CLI } from "../utils/consts.js";
 import { compress, decompress } from "../operations/compressOperations.js";
 import { calculateHash } from "../operations/hash.js";
 
@@ -19,31 +19,31 @@ export const operationHandler = ( operation ) => {
         try {
           
             switch(op){
-                case 'up': up();
+                case OPERTIONS_CLI.up: up();
                 break;
-                case 'cd': cd(args);
+                case OPERTIONS_CLI.cd: cd(args);
                 break;
-                case 'ls': ls();
+                case OPERTIONS_CLI.ls: ls();
                 break;
-                case 'cat': read(args); 
+                case OPERTIONS_CLI.cat: read(args); 
                 break;
-                case 'add': create(args);
+                case OPERTIONS_CLI.add: create(args);
                 break;
-                case 'rn': renameFile(args);
+                case OPERTIONS_CLI.rm: renameFile(args);
                 break;
-                case 'cp': copy(args);
+                case OPERTIONS_CLI.cp: copy(args);
                 break;
-                case 'mv': move(args);
+                case OPERTIONS_CLI.mv: move(args);
                 break;
-                case 'rm': delite(args);
+                case OPERTIONS_CLI.rm: delite(args);
                 break;
-                case 'os': osOperation(args);
+                case OPERTIONS_CLI.os: osOperation(args);
                 break
-                case 'compress': compress(args);
+                case OPERTIONS_CLI.compress: compress(args);
                 break;
-                case 'decompress': decompress(args);
+                case OPERTIONS_CLI.decompress: decompress(args);
                 break;
-                case 'hash': calculateHash(args);
+                case OPERTIONS_CLI.hash: calculateHash(args);
                 break;
             }
   
